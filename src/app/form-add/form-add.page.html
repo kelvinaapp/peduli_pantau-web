@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()"
+        ><ion-icon name="close"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+    <ion-title>Tambah Pertanyaan</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="submit()">Submit</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="fixed">No. Pertanyaan</ion-label>
+      <ion-input
+        [(ngModel)]="nomor"
+        placeholder="Nomor Urut Pertanyaan"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Pertanyaan</ion-label>
+      <ion-input
+        [(ngModel)]="question"
+        placeholder="Ketik pertanyaan"
+      ></ion-input>
+    </ion-item>
+    <!-- <ion-item>Daftar Jawaban <ion-button (click)="addOption()" fill="clear">Tambah jawaban</ion-button></ion-item> -->
+    <!-- <ion-item *ngFor="let opt of option;let i=index">
+      <ion-label position="fixed">Jawaban {{i+1}}</ion-label>
+      <ion-input [(ngModel)]="opt.label" placeholder="Ketik jawaban disini"></ion-input>
+      <ion-button color="danger" fill="clear" (click)="removeOption(i)"><ion-icon name="trash"></ion-icon></ion-button>
+    </ion-item> -->
+  </ion-list>
+</ion-content>

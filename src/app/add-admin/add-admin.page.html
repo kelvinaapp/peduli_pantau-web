@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tambah Admin</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <form [formGroup]="ionicForm" (ngSubmit)="submit()">
+      <ion-item *ngFor="let form of forms">
+        <ion-label>{{form.label}}</ion-label>
+        <ion-input [formControlName]="form.name" type="text" *ngIf="form.type == 'text'" [(ngModel)]="form.value"></ion-input>
+        <ion-input [formControlName]="form.name" type="password" *ngIf="form.type == 'password'" [(ngModel)]="form.value"></ion-input>
+        <ion-input [formControlName]="form.name" type="number" *ngIf="form.type == 'number'" [(ngModel)]="form.value"></ion-input>
+        <ion-radio-group [formControlName]="form.name" *ngIf="form.type == 'radio'" [(ngModel)]="form.value">
+          <ion-item *ngFor="let opt of form.option">
+            <ion-radio [value]="opt.value"></ion-radio>
+            <ion-label>{{opt.label}}</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+      <ion-button type="submit">Submit</ion-button>
+      </form>
+  </ion-list>
+
+</ion-content>

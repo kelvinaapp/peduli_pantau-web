@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()"
+        ><ion-icon name="close"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+    <ion-title>Edit Pasien</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="update()">Update</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>ID Pasien</ion-label>
+      <ion-input color="primary" readOnly [(ngModel)]="data.id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>NIK</ion-label>
+      <ion-input color="primary" readOnly [(ngModel)]="nik"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nama</ion-label>
+      <ion-input color="primary" [(ngModel)]="name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input
+        color="primary"
+        type="password"
+        [(ngModel)]="password"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Alamat</ion-label>
+      <ion-input color="primary" [(ngModel)]="alamat" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tanggal lahir</ion-label>
+      <ion-datetime
+        color="primary"
+        [(ngModel)]="tgl_lahir"
+        required
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tanggal Positif</ion-label>
+      <ion-datetime
+        color="primary"
+        [(ngModel)]="tgl_positif"
+        required
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tanggal Negatif</ion-label>
+      <ion-datetime color="primary" [(ngModel)]="tgl_negatif"></ion-datetime>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="status">
+      <ion-list-header>
+        <ion-label>Status</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Aktif</ion-label>
+        <ion-radio slot="start" value="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sembuh</ion-label>
+        <ion-radio slot="start" value="false"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

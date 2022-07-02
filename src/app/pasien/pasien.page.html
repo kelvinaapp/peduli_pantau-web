@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Data Pasien</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="getData()">Refresh Data</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar
+    showCancelButton="focus"
+    (ionChange)="filter($event)"
+  ></ion-searchbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label *ngFor="let col of column"><b>{{col.name}}</b></ion-label>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let p of pasien">
+      <ion-label>{{p.nik}}</ion-label>
+      <ion-label>{{p.name}}</ion-label>
+      <ion-label>{{p.alamat}}</ion-label>
+      <ion-label>{{p.tgl_lahir}}</ion-label>
+      <ion-label>{{p.tgl_positif}}</ion-label>
+      <ion-label>{{p.tgl_negatif}}</ion-label>
+      <ion-label>{{p.lama_isoman}} hari</ion-label>
+      <ion-label>{{p.status == true ? "Aktif":"Sembuh"}}</ion-label>
+      <ion-label
+        color="primary"
+        style="cursor: pointer"
+        (click)="edit(p)"
+        fill="clear"
+        >Edit</ion-label
+      >
+    </ion-item>
+  </ion-list>
+</ion-content>

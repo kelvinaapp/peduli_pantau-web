@@ -1,0 +1,19 @@
+
+
+<ion-content id="content" class="ion-padding ion-align-items-center ion-justify-content-center">
+
+    <ion-card id="card" class="ion-align-self-center ion-align-items-center">
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="login()" class="ion-align-self-center" expand="block">Login</ion-button>
+
+    </ion-card>
+
+</ion-content>

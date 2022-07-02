@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Fasilitas Kesehatan</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="addForm()" color="primary"
+        >Tambah</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar
+    placeholder="Search"
+    (ionChange)="search($event.detail.value)"
+  ></ion-searchbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let fas of faskes;let i=index;">
+      <ion-label>{{i+1}}. {{fas.nama}}</ion-label>
+      <ion-label>{{fas.phone}}</ion-label>
+      <ion-label>{{fas.alamat}}</ion-label>
+      <ion-label>{{fas.latitude}}</ion-label>
+      <ion-label>{{fas.longitude}}</ion-label>
+      <ion-button fill="clear" color="primary" (click)="editFaskes(fas)"
+        >Edit</ion-button
+      >
+      <ion-button fill="clear" color="danger" (click)="deleteFaskes(fas)"
+        >Delete</ion-button
+      >
+    </ion-item>
+  </ion-list>
+</ion-content>

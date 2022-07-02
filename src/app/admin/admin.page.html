@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="secondary" (click)="showForm()">
+        <ion-icon name="person-add-outline"></ion-icon>
+        Tambah Admin
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar (ionChange)="search($event.detail.value)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+  <ion-label *ngFor="let col of column">{{col.label}}</ion-label>
+</ion-item>
+<ion-list>
+  <ion-item *ngFor="let admin of adminlist">
+    <ion-label>{{admin.name}}</ion-label>
+    <ion-label>{{admin.username}}</ion-label>
+    <ion-label>{{admin.privileges}}</ion-label>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" color="primary" (click)="editAdmin(admin)">Edit</ion-button>
+      <ion-button fill="clear" color="danger" (click)="deleteAdmin(admin)">Hapus</ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-list>
+</ion-content>

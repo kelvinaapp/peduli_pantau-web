@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Laporan Harian Pasien</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>ID Pasien</ion-label>
+    <ion-label>NIK</ion-label>
+    <ion-label>Nama</ion-label>
+    <ion-label>Update Terakhir</ion-label>
+    <ion-label>Action</ion-label>
+  </ion-item>
+  <ion-list>
+    <ion-item *ngFor="let p of pasien">
+      <ion-label>{{p.id}}</ion-label>
+      <ion-label>{{p.nik}}</ion-label>
+      <ion-label>{{p.name}}</ion-label>
+      <ion-grid>
+        <ion-row *ngFor="let answer of p.log;let j = index" style="border: 0">
+          <ion-label *ngIf="j == 0">{{answer.formattedtime}}</ion-label>
+        </ion-row>
+      </ion-grid>
+      <ion-label (click)="detail(p)" color="primary" style="cursor: pointer"
+        >Detail</ion-label
+      >
+    </ion-item>
+  </ion-list>
+</ion-content>

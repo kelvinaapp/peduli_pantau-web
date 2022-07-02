@@ -1,0 +1,16 @@
+
+.scroll-y{
+  touch-action: pan-y;
+  overflow-y: var(--overflow);
+  overscroll-behavior-y: contain;
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+}
+#card{
+  width:25vw;
+  position: absolute;
+  align-self: center;
+  margin-left: 37vw;
+  margin-top:40vh;
+}

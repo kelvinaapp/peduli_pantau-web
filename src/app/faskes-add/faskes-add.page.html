@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>Tambah Faskes</ion-title>
+    <ion-buttons slot="end">
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+    <form [formGroup]="ionicForm" (ngSubmit)="submit()">
+      <ion-list>
+
+      <ion-item *ngFor="let form of forms" >
+        <ion-label position="floating" color="primary">{{form.label}}</ion-label>
+        <ion-input [formControlName]="form.name" *ngIf="form.type == 'text'" type="text" [(ngModel)]="form.value" required="true"></ion-input>
+      </ion-item>
+      <ion-button type="submit" class="ion-align-self-center">{{this.isEdit ? "Update":"Submit"}}</ion-button>
+      </ion-list>
+    </form>
+</ion-content>

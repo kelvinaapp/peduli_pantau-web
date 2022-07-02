@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Daftarkan Pasien</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <form [formGroup]="ionicForm" (ngSubmit)="submit()">
+      <ion-item *ngFor="let form of forms" >
+        <ion-label position="floating">{{form.label}}</ion-label>
+        <ion-input [formControlName]="form.name" *ngIf="form.type == 'text'" type="text" [(ngModel)]="form.value" required="true"></ion-input>
+        <ion-input [formControlName]="form.name" *ngIf="form.type == 'number'" type="number" [(ngModel)]="form.value" required="true"></ion-input>
+        <ion-input [formControlName]="form.name" *ngIf="form.type == 'password'" type="password" [(ngModel)]="form.value" required="true"></ion-input>
+        <ion-datetime [formControlName]="form.name" mode="md" [(ngModel)]="form.value" *ngIf="form.type == 'datetime'" displayFormat="DD MM YYYY" placeholder="Pilih Tanggal" required="true"></ion-datetime>
+      </ion-item>
+      <ion-button type="submit" class="ion-align-self-center">Submit</ion-button>
+    </form>
+
+  </ion-list>
+</ion-content>

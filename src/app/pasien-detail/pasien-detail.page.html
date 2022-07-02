@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>pasien-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>ID Pasien</ion-label>
+      <ion-text color="primary">{{data.id}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nama</ion-label>
+      <ion-text color="primary">{{data.name}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>NIK</ion-label>
+      <ion-text color="primary">{{data.nik}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Alamat</ion-label>
+      <ion-text color="primary">{{data.alamat}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tanggal lahir</ion-label>
+      <ion-text color="primary">{{data.tgl_lahir}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tanggal Positif</ion-label>
+      <ion-text color="primary">{{data.tgl_positif}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tanggal Negatif</ion-label>
+      <ion-text color="primary">{{data.tgl_negatif}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Status</ion-label>
+      <ion-text color="primary">{{data.status ? "Aktif":"Non-Aktif"}}</ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>
