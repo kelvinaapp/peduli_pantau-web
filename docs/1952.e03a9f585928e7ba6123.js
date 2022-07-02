@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpantau_dashboard=self.webpackChunkpantau_dashboard||[]).push([[1952],{1952:(s,_,a)=>{a.r(_),a(6423)}}]);

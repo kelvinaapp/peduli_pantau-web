@@ -99,15 +99,16 @@ export class FaskesPage implements OnInit {
   }
 
   search(val) {
+    const value = val.detail.value;
     this.faskes = this.tmpfaskes;
 
-    if (val == '') {
+    if (value == '') {
       this.faskes = this.tmpfaskes;
     } else {
       this.faskes = this.faskes.filter(
         (x) =>
-          x.nama.toLowerCase().includes(val.toLowerCase()) ||
-          x.alamat.toLowerCase().includes(val.toLowerCase())
+          x.nama.toLowerCase().includes(value.toLowerCase()) ||
+          x.alamat.toLowerCase().includes(value.toLowerCase())
       );
     }
   }

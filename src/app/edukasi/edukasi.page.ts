@@ -122,14 +122,15 @@ export class EdukasiPage implements OnInit {
   }
 
   search(val) {
+    const value = val.detail.value;
     this.edukasi = this.tmpedukasi;
-    if (val == '') {
+    if (value == '') {
       this.edukasi = this.tmpedukasi;
     } else {
       this.edukasi = this.edukasi.filter(
         (x) =>
-          x.judul.toLowerCase().includes(val.toLowerCase()) ||
-          x.content.toLowerCase().includes(val.toLowerCase())
+          x.judul.toLowerCase().includes(value.toLowerCase()) ||
+          x.content.toLowerCase().includes(value.toLowerCase())
       );
     }
   }
